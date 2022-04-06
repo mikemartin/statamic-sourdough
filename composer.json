@@ -1,5 +1,5 @@
 {
-    "name": "mikemartin/sourdough",
+    "name": "mikemartin/statamic-sourdough",
     "extra": {
         "statamic": {
             "name": "Sourdough",
