@@ -1,0 +1,45 @@
+---
+classes: 'inline-flex items-center space-x-1 border-b focus:z-10 focus:outline-none'
+sizes:
+  small: 'py-0.5 text-sm leading-3'
+  large: 'py-1 text-base leading-4 lg:text-lg lg:leading-5'
+colors:
+  gray: 'text-gray-700 border-gray-500 font-bold hover:text-secondary-500 hover:border-secondary-500 dark:text-gray-100 dark:border-gray-100 dark:hover:text-white'
+  secondary: 'text-secondary-500 border-secondary-500 font-bold hover:text-secondary-400 hover:border-secondary-400 dark:text-secondary-100 dark:border-secondary-100 dark:hover:border-white dark:hover:text-white'
+  disabled: 'border-transparent text-gray-700'
+---
+
+{{#
+	@name Text Button
+	@desc An underlined text link with left or right icons.
+  @param @front sizes size The text button size.
+  @param @front colors color The text button color.
+#}}
+<a
+  {{ if x-text }}x-text="{{ x-text }}"{{/if}}
+  {{ if x-href }}
+    x-bind:href="{{ x-href }}"
+  {{ else }}
+    href="{{ link ?? "#" }}"
+  {{/if}}
+  class="{{ view }}{{ classes }} {{ sizes[size] }} {{ colors[color] }}{{/view}} {{ class }}" {{ if external_link ?? link|contains:http }}target="_blank"{{/if }}>
+  {{ if icon == 'left' }}
+    {{ if size == "small" }}
+      {{ svg src="{link_icon or 'arrow-left' }" class="w-4 h-4 fill-current" }}
+    {{ else }}
+      {{ svg src="{link_icon or 'arrow-left' }" class="w-5 h-5 fill-current" }}
+    {{ /if }}
+  {{/if}}
+  <span>{{ text }}</span>
+  {{ if icon == 'right' }}
+    {{ if size == "small" }}
+      {{ svg src="{link_icon or 'arrow-right' }" class="w-4 h-4 fill-current" }}
+    {{ else }}
+      {{ svg src="{link_icon or 'arrow-right' }" class="w-5 h-5 fill-current" }}
+    {{ /if }}
+  {{/if}}
+  {{# Extend touch target to entire panel #}}
+  {{ if extend }}
+  <span class="absolute inset-0" aria-hidden="true"></span>
+  {{ /if }}
+</a>

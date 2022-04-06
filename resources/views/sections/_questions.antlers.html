@@ -1,0 +1,45 @@
+<div x-data="{ openPanel: 0 }" class="{{ gray ? 'bg-gray-50' : 'bg-white' }}">
+  <div class="relative lg:max-w-7xl mx-auto">
+    <div class="py-16 xl:py-28 px-4 sm:px-6 lg:px-8">
+      <div>
+        {{ partial:title center="true" }}
+      </div>
+      <div>
+        <div class="mt-10 md:mt-16">
+          <dl class="space-y-4 max-w-4xl mx-auto">
+            {{ questions }}
+              {{ partial:feature/accordion
+                 :description="answer" }}
+            {{ /questions }}
+          </dl>
+        </div>
+        {{ button }}
+          <div class="mt-10 md:mt-16 text-center">
+            {{ partial:button color="secondary" size="large" }}
+          </div>
+        {{ /button }}
+      </div>
+    </div>
+  </div>
+</div>
+
+{{ section:jsonld_questions }}
+<script type="application/ld+json">
+  {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+          {{ questions }}
+              {
+                  "@type": "Question",
+                  "name": {{ title|to_json }},
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": {{ answer|to_json }}
+                  }
+              } {{ unless last}},{{ /unless}}
+          {{ /questions }}
+      ]
+  }
+</script>
+{{ /section:jsonld_questions }}

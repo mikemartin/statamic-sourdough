@@ -1,0 +1,148 @@
+title: Grid
+fields:
+  -
+    handle: button
+    field:
+      fields:
+        -
+          handle: text
+          field:
+            input_type: text
+            display: Text
+            type: text
+            icon: text
+            listable: hidden
+        -
+          handle: link
+          field:
+            display: Link
+            type: link
+            icon: link
+            listable: hidden
+            validate:
+              - required
+      mode: table
+      max_rows: 1
+      add_row: 'Add Link'
+      reorderable: true
+      display: Button
+      type: grid
+      icon: grid
+      listable: hidden
+      replicator_preview: false
+      instructions_position: above
+      read_only: false
+  -
+    handle: buttons
+    field:
+      fields:
+        -
+          handle: text
+          field:
+            input_type: text
+            display: Text
+            type: text
+            icon: text
+            listable: hidden
+        -
+          handle: link
+          field:
+            display: Link
+            type: link
+            icon: link
+            listable: hidden
+            validate:
+              - required
+      mode: table
+      max_rows: 2
+      add_row: 'Add Link'
+      reorderable: true
+      display: Buttons
+      type: grid
+      icon: grid
+      listable: hidden
+      replicator_preview: false
+      instructions_position: above
+      read_only: false
+  -
+    handle: social
+    field:
+      fields:
+        -
+          handle: social_network
+          field:
+            options:
+              facebook: Facebook
+              twitter: Twitter
+              linkedin: LinkedIn
+              instagram: Instagram
+            clearable: false
+            multiple: false
+            searchable: true
+            taggable: true
+            push_tags: true
+            cast_booleans: false
+            type: select
+            width: 33
+            listable: hidden
+            display: 'Social network'
+            placeholder: 'Select social network'
+        -
+          handle: link
+          field:
+            type: text
+            listable: hidden
+            display: Link
+            width: 33
+            input_type: text
+            instructions_position: above
+            read_only: false
+            prepend: 'https://'
+            antlers: false
+      mode: table
+      reorderable: true
+      type: grid
+      listable: hidden
+      display: 'Social Links'
+      add_row: 'Add Social Link'
+      instructions_position: above
+      read_only: false
+  -
+    handle: apps
+    field:
+      display: Apps
+      type: grid
+      add_row: 'Add App'
+      fields:
+        -
+          handle: store
+          field:
+            options:
+              iphone: iPhone
+              googleplay: 'Google Play'
+            clearable: false
+            multiple: false
+            searchable: false
+            taggable: false
+            push_tags: false
+            cast_booleans: false
+            type: select
+            localizable: false
+            listable: hidden
+            display: Store
+            default: iphone
+        -
+          handle: link
+          field:
+            input_type: text
+            type: text
+            localizable: false
+            listable: hidden
+            display: Link
+            placeholder: 'https://apps.apple.com/'
+            prepend: URL
+      listable: hidden
+      mode: table
+      reorderable: true
+      max_rows: 2
+      min_rows: 1

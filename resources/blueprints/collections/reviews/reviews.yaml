@@ -1,0 +1,58 @@
+sections:
+  main:
+    display: Main
+    fields:
+      -
+        handle: title
+        field:
+          type: hidden
+          required: false
+      -
+        handle: name
+        field:
+          input_type: text
+          antlers: false
+          display: Name
+          type: text
+          icon: text
+          width: 50
+          listable: hidden
+          instructions_position: above
+          read_only: false
+      -
+        handle: role
+        field:
+          input_type: text
+          antlers: false
+          display: Role
+          type: text
+          icon: text
+          width: 50
+          listable: hidden
+          instructions_position: above
+          read_only: false
+      -
+        handle: review
+        field: bard.description
+        config:
+          buttons:
+            - h3
+            - bold
+            - italic
+            - unorderedlist
+            - orderedlist
+            - removeformat
+            - anchor
+          display: Review
+  sidebar:
+    display: Sidebar
+    fields:
+      -
+        handle: image
+        field: assets.image
+      -
+        handle: slug
+        field:
+          type: slug
+          localizable: true
+title: Reviews

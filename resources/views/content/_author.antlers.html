@@ -1,0 +1,13 @@
+<div class="w-full relative border {{ gray ? 'bg-white border-gray-100' : 'bg-gray-50 border-gray-100' }} rounded-md">
+    <div class="relative p-6 lg:p-10">
+      <div class="flex">
+        <div class="mr-4 lg:mr-9 flex-shrink-0">
+          {{ responsive src="{author:image}" class="h-16 w-16 lg:h-36 lg:w-36 rounded-full border-white border-2 shadow-md" ratio="1/1" glide:width="300" glide:quality="80" alt="{ image:alt }" loading="lazy"}}
+        </div>
+        <div class="space-y-4">
+          {{ partial:typography as="h3" style="h5" :text="title"}}
+          {{ partial:typography as="p" style="small" text="{author:bio}"}}
+        </div>
+      </div>
+    </div>
+  </div>

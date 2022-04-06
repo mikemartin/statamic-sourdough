@@ -1,0 +1,14 @@
+title: 'Error Page'
+data:
+  title: 'Page not found'
+  description:
+    -
+      type: paragraph
+      content:
+        -
+          type: text
+          text: 'Something’s gone wrong here and this page is no longer available.'
+  button:
+    -
+      text: 'Back to home'
+      link: 'entry::home'

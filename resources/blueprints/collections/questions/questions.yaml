@@ -1,0 +1,42 @@
+sections:
+  main:
+    display: Main
+    fields:
+      -
+        handle: title
+        field:
+          type: text
+          required: true
+          validate:
+            - required
+          display: Question
+          instructions_position: above
+          listable: true
+          read_only: false
+          input_type: text
+          antlers: false
+      -
+        handle: answer
+        field: bard.description
+        config:
+          buttons:
+            - h3
+            - bold
+            - italic
+            - unorderedlist
+            - orderedlist
+            - removeformat
+            - anchor
+          display: Answer
+      -
+        handle: button
+        field: grid.button
+  sidebar:
+    display: Sidebar
+    fields:
+      -
+        handle: slug
+        field:
+          type: slug
+          localizable: true
+title: Questions

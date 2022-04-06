@@ -1,0 +1,54 @@
+---
+classes: 'flex w-full sm:inline-flex items-center justify-center py-2 px-4 rounded-full border border-transparent text-base font-medium focus:outline-none focus:ring-4 focus:ring-opacity-50'
+sizes:
+  large: 'sm:text-lg sm:py-3 sm:px-5'
+colors:
+  primary: 'text-white bg-primary-500 hover:bg-primary-400 focus:ring-primary-600'
+  secondary: 'text-secondary-900 bg-secondary-100 hover:bg-secondary-50 focus:ring-secondary-200 dark:text-white dark:bg-secondary-700 dark:hover:bg-secondary-600 dark:focus:ring-secondary-900'
+  gray: 'text-gray-500 bg-gray-200 hover:bg-gray-100 dark:text-white dark:bg-secondary-800 dark:opacity-75'
+  disabled: 'text-gray-400 bg-gray-200 dark:text-white dark:bg-secondary-800 dark:opacity-75 cursor-not-allowed'
+---
+{{#
+   @name Button
+   @desc A single button component.
+   @param @front sizes size The button size.
+   @param @front colors color The button color.
+#}}
+
+<{{ as or 'a' }}
+{{ if x-text }}x-text="{{ x-text }}"{{/if}}
+{{ if x-href }}
+  x-bind:href="{{ x-href }}"
+{{ elseif button_link || link }}
+  href="{{ button_link ?? link }}"
+{{/if}}
+{{ if as == 'button' }}type="{{ type ?? 'button' }}"{{/if}}
+class="{{ view }}{{ classes }} {{ sizes[size] }} {{ colors[color] }}{{/view}}
+{{ wide ?= 'px-5 sm:px-10' }}
+{{ !is_full ?= "sm:w-auto" }}
+"
+{{ if click }}@click='{{ click }}'{{ /if }}
+{{ if sending }}x-bind:disabled="sending" x-bind:class="{'opacity-75 cursor-default': sending }"{{/if}}
+{{ if link | contains:.pdf }}download{{ /if }}>
+  {{ if screen_reader }}
+    <div class="sr-only">{{ screen_reader }}</div>
+  {{ /if }}
+  {{ if sending }}
+    {{ svg src="loading" class="animate-spin -ml-1 w-5 h-5 -mt-0.5 mr-2" x-show="sending" style="display:none" }}
+  {{ /if }}
+  {{ if icon == 'left' }}
+    {{ svg src="{link_icon or 'arrow-left' }" class="mr-2 w-5 h-5 fill-current" }}
+  {{/if}}
+  <span>{{ button_text ?? text }}</span>
+  {{ if icon == 'right' }}
+    {{ if link | contains:#compare }}
+      {{ svg:arrow-bottom class="ml-2 w-5 h-5 fill-current" }}
+    {{ else }}
+      {{ svg src="{link_icon or 'arrow-right' }" class="ml-2 w-5 h-5 fill-current" }}
+    {{ /if }}
+  {{/if}}
+  {{# Extend touch target to entire panel #}}
+  {{ if extend }}
+  <span class="absolute inset-0" aria-hidden="true"></span>
+  {{ /if }}
+</{{ as or 'a' }}>

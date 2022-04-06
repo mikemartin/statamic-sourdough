@@ -1,0 +1,44 @@
+sections:
+  main:
+    display: Main
+    fields:
+      -
+        handle: phone
+        field:
+          input_type: text
+          antlers: false
+          display: Phone
+          type: text
+          icon: text
+          width: 50
+          listable: hidden
+          instructions_position: above
+          read_only: false
+      -
+        handle: email
+        field:
+          input_type: text
+          antlers: false
+          display: Email
+          type: text
+          icon: text
+          width: 50
+          listable: hidden
+          instructions_position: above
+          read_only: false
+      -
+        handle: address
+        field:
+          mode: keyed
+          keys:
+            1: 'Line 1'
+            2: 'Line 2'
+          display: Address
+          type: array
+          icon: array
+          listable: hidden
+          instructions_position: above
+          read_only: false
+      -
+        handle: social_links
+        field: grid.social

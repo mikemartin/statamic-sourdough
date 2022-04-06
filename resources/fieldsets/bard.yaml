@@ -1,0 +1,174 @@
+title: Bard
+fields:
+  -
+    handle: description
+    field:
+      always_show_set_button: false
+      buttons:
+        - h3
+        - bold
+        - italic
+        - unorderedlist
+        - orderedlist
+        - removeformat
+        - anchor
+      save_html: false
+      toolbar_mode: floating
+      link_noopener: false
+      link_noreferrer: false
+      target_blank: false
+      reading_time: false
+      fullscreen: false
+      allow_source: false
+      display: Description
+      type: bard
+      icon: bard
+      listable: hidden
+      replicator_preview: false
+  -
+    handle: content
+    field:
+      always_show_set_button: false
+      sets:
+        author:
+          display: Author
+          fields:
+            -
+              handle: title
+              field:
+                type: text
+                display: Title
+            -
+              handle: author
+              field:
+                type: entries
+                display: Author
+                instructions: 'Leave blank to show author of article'
+                max_items: 1
+                collections:
+                  - people
+        button:
+          display: Button
+          fields:
+            -
+              handle: button
+              field: grid.button
+        video:
+          display: Video
+          fields:
+            -
+              handle: video
+              field:
+                display: Video
+                type: video
+                icon: video
+                listable: hidden
+            -
+              handle: caption
+              field:
+                input_type: text
+                display: Caption
+                type: text
+                icon: text
+                listable: hidden
+        image:
+          display: Image
+          fields:
+            -
+              handle: image
+              field: assets.image
+            -
+              handle: caption
+              field:
+                input_type: text
+                display: Caption
+                type: text
+                icon: text
+                listable: hidden
+        call_to_action:
+          display: 'Call to Action'
+          fields:
+            -
+              handle: title
+              field:
+                input_type: text
+                display: Title
+                type: text
+                icon: text
+                listable: hidden
+            -
+              handle: headline
+              field:
+                input_type: text
+                display: Headline
+                type: text
+                icon: text
+                listable: hidden
+            -
+              handle: description
+              field: bard.description
+            -
+              handle: image
+              field: assets.image
+            -
+              handle: button
+              field: grid.button
+        checklist:
+          display: Checklist
+          fields:
+            -
+              handle: checklist
+              field:
+                display: Checklist
+                type: list
+                icon: list
+                listable: hidden
+                instructions_position: above
+        review:
+          display: Review
+          fields:
+            -
+              handle: review
+              field:
+                max_items: 1
+                mode: default
+                create: true
+                display: Review
+                type: entries
+                icon: entries
+                listable: hidden
+                instructions_position: above
+                read_only: false
+                collections:
+                  - reviews
+      buttons:
+        - h2
+        - h3
+        - bold
+        - italic
+        - unorderedlist
+        - orderedlist
+        - removeformat
+        - quote
+        - anchor
+        - image
+        - table
+      save_html: false
+      container: assets
+      toolbar_mode: fixed
+      link_noopener: false
+      link_noreferrer: false
+      target_blank: false
+      reading_time: true
+      fullscreen: true
+      allow_source: true
+      display: Content
+      type: bard
+      icon: bard
+      listable: hidden
+      replicator_preview: false
+      instructions_position: above
+      enable_input_rules: true
+      enable_paste_rules: true
+      read_only: false
+      antlers: false

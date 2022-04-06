@@ -1,0 +1,9 @@
+{
+    "name": "mikemartin/sourdough",
+    "extra": {
+        "statamic": {
+            "name": "Sourdough",
+            "description": "Sourdough starter kit"
+        }
+    }
+}
