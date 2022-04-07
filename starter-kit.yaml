@@ -6,9 +6,13 @@ export_paths:
   - resources/blueprints
   - resources/fieldsets
   - resources/css/site.css
+  - resources/js
+  - resources/svg
   - resources/views
   - public/assets
   - public/css
   - package.json
   - tailwind.config.js
   - webpack.mix.js
+dependencies:
+  spatie/statamic-responsive-images: ^2.11

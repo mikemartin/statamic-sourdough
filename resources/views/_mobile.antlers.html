@@ -1,0 +1,70 @@
+<div x-show="mobileMenuOpen" x-transition:enter-start="translate-x-full" x-transition:enter-end="translate-x-0" x-transition:leave="transition ease-in-out duration-300 transform" x-transition:leave-start="translate-x-0" x-transition:leave-end="translate-x-full" class="dark bg-secondary-900 overflow-y-scroll h-screen pb-6 scrolling-touch absolute inset-0 transition transform origin-right lg:hidden"  style="display: none;">
+    <div x-data="{ active: null }">
+      <div class="pt-2 pb-6 px-4">
+        <div class="flex items-center justify-between">
+          <div>
+            {{ svg:logo class="w-24 sm:w-28 h-5 sm:h-7 text-white fill-current" }}
+          </div>
+          <div class="-mr-2">
+            {{ partial:elements/button color="secondary" text="Back" as="button" size="small" screen_reader="Close Menu" click="mobileMenuOpen = false" }}
+          </div>
+        </div>
+      </div>
+        {{ nav:main scope="nav" }}
+          {{ if children }}
+            {{ partial:nav/accordion }}
+            <nav class="grid gap-6">
+              {{ children scope="child" }}
+                {{ if child:title != 'More Features' }}
+                  {{ partial:nav/icon-link :color="child:color" medium="true" }}
+                {{ /if }}
+              {{ /children }}
+            </nav>
+            {{ if nav:title == 'Features' }}
+              {{ children scope="more" }}
+                {{ if more:title == 'More Features' }}
+                  <div class="mt-6">
+                    <h3 class="text-sm font-medium text-gray-500 dark:text-secondary-300 tracking-wider uppercase">
+                      {{ title }}
+                    </h3>
+                    <nav class="mt-4 grid gap-2">
+                      {{ more:children }}
+                        <a href="{{ url }}" class="text-base font-medium text-gray-600 hover:text-gray-800 dark:text-secondary-100 dark:hover:text-white">
+                          {{ title }}
+                        </a>
+                      {{ /more:children }}
+                    </nav>
+                  </div>
+                {{ /if }}
+              {{ /children }}
+            {{ /if }}
+            {{ /partial:nav/accordion }}
+          {{ /if }}
+        {{ /nav:main }}
+  
+        {{ nav:main scope="nav" }}
+          {{ if !children }}
+            <a href="{{ url }}" class="w-full block text-3xl font-display font-normal text-gray-600 hover:text-gray-900 dark:text-white dark:hover:text-white py-3 px-4">
+              {{ title }}
+            </a>
+          {{ /if }}
+        {{ /nav:main }}
+  
+        <div class="py-6 px-4">
+          <div class="flex flex-col sm:flex-row items-center sm:space-x-6">
+            {{ nav:utility }}
+              {{ if last }}
+                {{ partial:elements/button color="primary" size="medium" :link="url" :text="title" }}
+              {{ else }}
+                {{ unless simple_nav }}
+                  <a href="{{ url }}" class="mt-4 sm:mt-0 order-1 sm:order-none text-base text-gray-600 hover:text-gray-900 dark:text-secondary-100 dark:hover:text-white">
+                    {{ title }}{{ if title == 'Login'}} <span class="sm:hidden">to ShiftCare</span>{{ /if }}
+                  </a>
+                {{ /unless }}
+              {{ /if }}
+            {{ /nav:utility }}
+          </div>
+        </div>
+    </div>
+  </div>
+  

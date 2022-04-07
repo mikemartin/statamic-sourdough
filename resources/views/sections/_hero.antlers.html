@@ -4,10 +4,11 @@
         <div class="relative py-10 px-4 sm:px-6 lg:px-8 sm:py-16 xl:py-24">
           <div class="max-w-4xl mx-auto md:text-center space-y-4 md:space-y-8">
             <div class="text-base max-w-xl md:flex md:flex-col md:items-center md:text-center md:mx-auto md:max-w-4xl space-y-4 md:space-y-8">
-                {{ partial:elements/typography style="display" as="p" :text="title" }}
+                {{ partial:elements/typography style="display" as="h1" :text="title" }}
                 {{ if description }}
                     {{ partial:elements/typography style="prose" as="div" class="max-w-none" :text="description" }}
                 {{ /if }}
+                {{ partial:elements/buttons }}
             </div>            
           </div>
         </div>

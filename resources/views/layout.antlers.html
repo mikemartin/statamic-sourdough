@@ -11,6 +11,7 @@
         <link rel="stylesheet" href="{{ mix src='css/tailwind.css' }}">
     </head>
     <body class="bg-neutral-50 font-sans leading-normal text-neutral-800">
+        {{ partial:navigation :dark="sections:0:dark" }}
         {{ template_content }}
         <script src="{{ mix src='/js/site.js' }}"></script>
     </body>

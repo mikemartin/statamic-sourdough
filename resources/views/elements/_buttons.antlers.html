@@ -1,0 +1,17 @@
+{{#
+	@name Buttons
+	@desc Horizontal buttons component. First button is primary and last button is secondary.
+#}}
+<div class="mt-10 space-y-4 sm:space-y-0 sm:space-x-4 {{ center ?= 'md:flex md:justify-center' }}">
+{{ buttons }}
+    {{ if first }}
+    {{ partial:elements/button color="primary" size="large" icon="right" }}
+    {{ else }}
+    {{ if is_dark }}
+        {{ partial:elements/button type="dark" size="large" }}
+    {{ else }}
+        {{ partial:elements/button color="secondary" size="large" }}
+    {{ /if }}
+    {{ /if }}
+{{ /buttons }}
+</div>

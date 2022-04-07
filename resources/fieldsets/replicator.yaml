@@ -9,6 +9,11 @@ fields:
           display: Hero
           fields:
             -
+              handle: dark
+              field:
+                type: toggle
+                display: Dark
+            -
               handle: title
               field:
                 input_type: text
