@@ -14,10 +14,10 @@
           {{ if button || learn_more }}
             <div class="mt-6 md:mt-10">
               {{ if learn_more }}
-                {{ partial:button text="Learn about { title }" :link="url" color="secondary" size="large" }}
+                {{ partial:elements/button text="Learn about { title }" :link="url" color="secondary" size="large" }}
               {{ else }}
                 {{ button }}
-                  {{ partial:link color="secondary" icon="right" }}
+                  {{ partial:elements/link color="secondary" icon="right" }}
                 {{ /button }}
               {{ /if }}
             </div>

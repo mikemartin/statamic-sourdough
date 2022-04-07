@@ -1,4 +1,4 @@
-<div x-data="{ openPanel: 0 }" class="{{ gray ? 'bg-gray-50' : 'bg-white' }}">
+<div x-data="{ openPanel: 0 }" class="{{ gray ? 'bg-neutral-50' : 'bg-white' }}">
   <div class="relative lg:max-w-7xl mx-auto">
     <div class="py-16 xl:py-28 px-4 sm:px-6 lg:px-8">
       <div>
@@ -15,7 +15,7 @@
         </div>
         {{ button }}
           <div class="mt-10 md:mt-16 text-center">
-            {{ partial:button color="secondary" size="large" }}
+            {{ partial:elements/button color="secondary" size="large" }}
           </div>
         {{ /button }}
       </div>

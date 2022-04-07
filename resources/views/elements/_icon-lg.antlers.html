@@ -6,23 +6,20 @@ colors:
   secondary:
     glow: "bg-secondary-500 dark:bg-secondary-400"
     gradient: "from-secondary-400 to-secondary-500"
-  amber:
-    glow: "bg-amber-500 dark:bg-amber-400"
-    gradient: "from-amber-400 to-amber-500"
-  green:
-    glow: "bg-green-500 dark:bg-green-400"
-    gradient: "from-green-400 to-green-500"
-  purple:
-    glow: "bg-purple-600 dark:bg-purple-500"
-    gradient: "from-purple-500 to-purple-600"
+  error:
+    glow: "bg-error-500 dark:bg-error-400"
+    gradient: "from-error-400 to-error-500"
+  success:
+    glow: "bg-success-500 dark:bg-success-400"
+    gradient: "from-success-400 to-success-500"
 ---
 {{#
    @name Large Icon
    @desc A large icon component with colored background.
    @param @front colors color The icon variant color.
 #}}
-<div class="flex justify-center items-center {{ if size == "small" }}h-11 w-11{{else}}h-16 w-16{{/if}} rounded-squircle {{ view }}{{ colors[color]:glow }}{{ /view }} bg-opacity-20 dark:bg-opacity-20">
-  <div class="{{ if size == "small" }}h-10 w-10{{else}}h-14 w-14{{/if}} flex justify-center items-center rounded-squircle bg-gradient-to-b {{ view }}{{ colors[color]:gradient }}{{ /view }} text-white">
+<div class="flex justify-center items-center {{ if size == "small" }}h-11 w-11{{else}}h-16 w-16{{/if}} rounded-full {{ view }}{{ colors[color]:glow }}{{ /view }} bg-opacity-20 dark:bg-opacity-20">
+  <div class="{{ if size == "small" }}h-10 w-10{{else}}h-14 w-14{{/if}} flex justify-center items-center rounded-full bg-gradient-to-b {{ view }}{{ colors[color]:gradient }}{{ /view }} text-white">
     {{ svg src="{icon}" class="flex-shrink-0 h-6 w-6 fill-current" }}
   </div>
 </div>

@@ -1,0 +1,22 @@
+<div class="relative lg:max-w-screen-xl mx-auto" id="{{ section_headline|slugify  }}">
+  <div class="px-4 sm:px-6 lg:px-8 py-16 xl:py-36">
+    <div class="relative mb-8">
+      <div class="text-base max-w-xl space-y-4 md:space-y-8">
+        {{ if section_title }}
+        <h2 class="leading-6 text-neutral-400 font-body tracking-wide uppercase">{{ section_title }}</h2>
+        {{ /if }}
+        {{ if section_headline }}
+          {{ partial:elements/typography style="h2" as="p" text="{ section_headline|widont }"}}
+        {{ /if }}
+        {{ if section_description }}
+          <div class="prose prose-lg prose-secondary text-neutral-700">
+            {{ section_description }}
+          </div>
+        {{ /if }}
+      </div>
+    </div>
+    <div class="mt-12 lg:mt-16">
+      {{ slot }}
+    </div>
+  </div>
+</div>

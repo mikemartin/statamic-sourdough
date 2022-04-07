@@ -1,0 +1,20 @@
+<div class="space-y-4">
+  <div class="space-y-4">
+    <h2 class="text-2xl font-display text-neutral-800 dark:text-white">{{ color|title }} Buttons</h2>
+    {{ partial:elements/typography style="h5" as="p" text="Large" }}
+    <div class="flex flex-wrap space-y-4 sm:space-y-0 sm:space-x-4">
+      {{ partial:elements/button link="#" :text="color|title" :color="color" size="large" }}
+      {{ partial:elements/button link="#" :text="color|title" :color="color" size="large" icon="right" }}
+      {{ partial:elements/button link="#" :text="color|title" :color="color" size="large" sending="true" }}
+    </div>
+  </div>
+
+  <div class="space-y-4">
+    {{ partial:elements/typography style="h5" as="p" text="Small" }}
+    <div class="flex flex-wrap space-y-4 sm:space-y-0 sm:space-x-4">
+      {{ partial:elements/button link="#" :text="color|title" :color="color" size="medium" }}
+      {{ partial:elements/button link="#" :text="color|title" :color="color" size="medium" icon="right" }}
+      {{ partial:elements/button link="#" :text="color|title" :color="color" size="medium" sending="true" }}
+    </div>
+  </div>
+</div>

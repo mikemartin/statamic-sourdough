@@ -1,0 +1,61 @@
+{{ partial:sections/hero }}
+
+{{ partial:style/section section_headline="Colors" anchor="true" }}
+  <div class="p-8 bg-white grid grid-cols-1 sm:grid-cols-2 gap-16">
+    {{ partial:style/colors }}
+  </div>
+{{ /partial:style/section }}
+
+{{ partial:style/section section_headline="Typography" anchor="true" }}
+  <div class="grid grid-cols-1 sm:grid-cols-2">
+    <div class="p-8 bg-white">
+      {{ partial:style/typography text="Make the web smell better." }}
+    </div>
+
+    <div class="p-8 dark bg-secondary-900">
+      {{ partial:style/typography text="Make the web smell better." }}
+    </div>
+  </div>
+{{ /partial:style/section }}
+
+{{ partial:style/section section_headline="Buttons" anchor="true" }}
+  <div x-data="{ sending: true }" class="grid grid-cols-1 sm:grid-cols-2">
+    <div class="p-8 bg-white space-y-16">
+      {{ partial:style/buttons color="primary" }}
+      {{ partial:style/buttons color="secondary" }}
+      {{ partial:style/buttons color="disabled" }}
+    </div>
+
+    <div class="p-8 dark bg-secondary-900 space-y-16">
+      {{ partial:style/buttons color="primary" }}
+      {{ partial:style/buttons color="secondary" }}
+      {{ partial:style/buttons color="disabled" }}
+    </div>
+  </div>
+{{ /partial:style/section }}
+
+{{ partial:style/section section_headline="Icons" anchor="true" }}
+  <div class="grid grid-cols-1 sm:grid-cols-2">
+    <div class="p-8 bg-white space-y-16">
+      {{ partial:style/icons size="large" }}
+      {{ partial:style/icons size="small" }}
+    </div>
+
+    <div class="p-8 dark bg-secondary-900 space-y-16">
+      {{ partial:style/icons size="large" }}
+      {{ partial:style/icons size="small" }}
+    </div>
+  </div>
+{{ /partial:style/section }}
+
+{{ partial:style/section section_headline="Text Buttons" anchor="true" }}
+  <div class="grid grid-cols-1 sm:grid-cols-2">
+    <div class="p-8 bg-white">
+      {{ partial:style/text-buttons }}
+    </div>
+
+    <div class="p-8 dark bg-secondary-900">
+      {{ partial:style/text-buttons }}
+    </div>
+  </div>
+{{ /partial:style/section }}
